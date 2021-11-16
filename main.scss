@@ -1,19 +1,20 @@
-@import "./utils/variables";
-@import "./utils/functions";
-@import "./utils/mixins";
-@import "./utils/extensions";
+@import "./sass/utils/variables";
+@import "./sass/utils/functions";
+@import "./sass/utils/mixins";
+@import "./sass/utils/placeholders";
+@import "./sass/utils/extensions";
 
-@import "./base/base";
-@import "./base/typography";
+@import "./sass/base/bases";
+@import "./sass/base/typography";
 
-@import "./components/buttons";
+@import "./sass/components/buttons";
 
-@import "./layout/header";
-@import "./layout/nav";
-@import "./layout/container";
-@import "./layout/form";
+@import "./sass/layout/header";
+@import "./sass/layout/nav";
+@import "./sass/layout/container";
+@import "./sass/layout/form";
 
 
-@import "./pages/work";
-@import "./pages/about";
-@import "./pages/project";
+@import "./sass/pages/work";
+@import "./sass/pages/about";
+@import "./sass/pages/project";
