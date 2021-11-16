@@ -1,0 +1,19 @@
+{
+  "name": "p3_boyer_tom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomBoyer/TomBoyer_3_16112021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TomBoyer/TomBoyer_3_16112021/issues"
+  },
+  "homepage": "https://github.com/TomBoyer/TomBoyer_3_16112021#readme"
+}
