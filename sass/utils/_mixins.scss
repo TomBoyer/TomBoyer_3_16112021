@@ -1,5 +1,9 @@
 //mixins
 
+@mixin border {
+    border: 1px black solid;
+}
+
 @mixin flex-center {
     display: flex;
     justify-content: center;
@@ -8,11 +12,25 @@
 
 @mixin btn {
     @include flex-center;
-    background: linear-gradient($color-2 0%, $color-1 100%);
+    background: #9356dc;
+    background: linear-gradient(355deg,#9356dc 0%, #ff79da 100%);
     color: white;
-    padding: 0.5em 1em;
+    padding: .8em 1em;
     border-radius: 7em;
-    box-shadow: 0px 0px 10px 10px rgba(0 0 0 / 15%);
+    box-shadow: 0px 5px 2px 0px rgba(0 0 0 / 15%);
+}
+
+@mixin btn-hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+    box-shadow: 0px 10px 10px 0px rgba(0 0 0 / 20%);
+
+    transition: all $duration ease-out;
+}
+@mixin btn-active {
+    transform: translate(0.2em, 0.2em);
+    box-shadow: 0px 5px 2px 0px rgba(0 0 0 / 15%);
+    transition: transform ease-out;
 }
 
 @mixin dash ($array, $offset, $width) {
