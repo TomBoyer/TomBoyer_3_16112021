@@ -1,0 +1,32 @@
+//loader
+
+/* loader barres */
+
+.loader-bars:before,
+.loader-bars:after,
+.loader-bars span:before,
+.loader-bars span:after
+{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 10px;
+    height: 30px;
+    background: linear-gradient($color-1 0%, $color-2 50%, $color-3 100%);
+    animation: grow 1.2s linear infinite;
+}
+.loader-bars:after{
+    left: 15px;
+    animation-delay: -.25s;
+}
+.loader-bars span:before{
+    left: 30px;
+    animation-delay: -.5s;
+}
+.loader-bars span:after{
+    left: 45px;
+    animation-delay: -.75s;
+}

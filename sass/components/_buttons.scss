@@ -1,0 +1,73 @@
+//buttons
+
+//btn-1
+/* .btn{
+    @include flex-center; 
+
+    width: 50%;
+
+    padding: 0.5em 1em;
+
+    border-radius: 7em;
+
+    box-shadow: 0px 0px 10px 10px rgba(0 0 0 / 30%);
+
+    opacity: 1;
+
+    cursor: pointer;
+
+    background: linear-gradient($color-2 0%, $color-1 100%);
+    color: white;
+
+    position: relative;
+
+    &::after{
+        content: '';
+
+        border-radius: 7em;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        background: radial-gradient(circle, lighten($color-1, 2) 0%, darken($color-2, 5) 100%);
+        opacity: 0;
+
+        transition: opacity $duration;
+
+        z-index: -1;
+    }
+    p{
+        color: white;
+    }
+
+    &:hover{
+        opacity: 0.8;
+        transform: opacity $duration;
+        box-shadow: 0px 0px 10px 10px rgba(0 0 0 / 40%);
+
+        &::after{
+            opacity: 1;
+        }
+    }   
+} */
+
+// btn-2
+
+.btn-2{
+    @include btn;
+
+    &:hover{
+    transform: scale(1.1);
+    transition: transform $duration ease-out;
+    opacity: 0.9;
+    }
+
+    &:active{
+        transform: translate(0.2em, 0.2em);
+        transition: transform ease-out;
+    }
+}
+

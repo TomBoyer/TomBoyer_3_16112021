@@ -1,0 +1,22 @@
+//mixins
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin btn {
+    @include flex-center;
+    background: linear-gradient($color-2 0%, $color-1 100%);
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 7em;
+    box-shadow: 0px 0px 10px 10px rgba(0 0 0 / 15%);
+}
+
+@mixin dash ($array, $offset, $width) {
+    stroke-dasharray: $array;
+    stroke-dashoffset: $offset;
+    stroke-width: $width;
+}
