@@ -71,6 +71,10 @@
         }
         &:active{
             @include btn-active;
+            background: $color-1-clr;
+            .nav__icon{
+                color: $color-1;
+            }
         }
         &:visited{
             background: $color-1-clr;
@@ -244,7 +248,7 @@
     &:hover &__check{
         @include flex-center;
         transform-origin: right;
-        animation: slide $duration ease;
+        animation: slide 3s ease;
     }
     &:hover .price{
         padding-right: 70px;

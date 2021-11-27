@@ -309,6 +309,10 @@ h6 {
   transform: translate(0.2em, 0.2em);
   box-shadow: 0px 5px 2px 0px rgba(0, 0, 0, 0.15);
   transition: transform ease-out;
+  background: #f5edff;
+}
+.nav li:active .nav__icon {
+  color: #9356DC;
 }
 .nav li:visited {
   background: #f5edff;
@@ -443,7 +447,7 @@ h6 {
   justify-content: center;
   align-items: center;
   transform-origin: right;
-  animation: slide 0.3s ease;
+  animation: slide 3s ease;
 }
 .items:hover .price {
   padding-right: 70px;
@@ -495,6 +499,9 @@ h6 {
 .footer {
   background: #353535;
   padding: 2em 1.2em;
+}
+.footer__title {
+  width: 130px;
 }
 .footer__title h1 {
   color: white;
