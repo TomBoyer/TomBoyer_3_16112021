@@ -1,5 +1,6 @@
-//main content
+//Home Page
 
+//main content
 //location
 
 .location{
@@ -46,7 +47,7 @@
 //nav
 
 .nav{
-    padding: 2em 1em;
+    @include padding;
 
     &__title{
         margin-bottom: 1em;
@@ -164,6 +165,143 @@
 
                 font-size: 25px;
             }
+        }
+    }
+}
+
+//Dish Page
+
+.dish{
+    /* position: absolute; */
+    border-radius: 20px 20px 0 0;
+
+    margin-top: -10px;
+    @include padding;
+
+    background: $color-4;
+
+    &__img{
+        /* position: relative; */
+    
+        img{
+            object-fit: cover;
+    
+            width: 100%;
+            height: 230px;
+        }
+    }
+
+    &__title{
+        @include flex-center;
+
+        position: relative;
+
+        margin-bottom: 1.5em;
+    }
+
+    &__order{
+        /* display: grid;
+        grid-gap: 40px; */
+
+        &__box{
+            display: grid;
+            grid-gap: 15px;
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+    }
+ 
+    &__button{
+        display: flex;
+        justify-content: center;
+
+        margin: 3em 0 1em 0;
+        
+        .btn{
+            padding: 1em 3.5em;
+        }
+    }
+}
+
+.items{
+    background: white;
+
+    padding: 1.1em 1em;
+
+    border-radius: 1em;
+
+    height: 80px;
+    
+    @include box-shadow-1;
+
+    overflow: hidden;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    &:hover &__check{
+        @include flex-center;
+        transform-origin: right;
+        animation: slide $duration ease;
+    }
+    &:hover .price{
+        padding-right: 70px;
+        transition: $duration ease;
+    }
+    &:active{
+        @include btn-active;
+    }
+
+    &__food-price{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        width: 100%;
+
+        .food{
+            white-space: nowrap;
+            overflow: hidden;
+            p{
+                margin-top: 5px;
+        
+                font-size: 15px;
+        
+                font-weight: 300;
+
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        .price{
+            font-weight: bold;
+            padding: 0 0.8em;
+        }
+    }
+
+    &__check{
+        position: absolute;
+        right: 0;
+
+        /* display: flex;
+        align-items: center; */
+
+        display: none;
+
+        height: 100%;
+
+        padding: 0 1em;
+
+        background: $color-3;
+
+        i{
+            color: white;
+            font-size: 30px;
+
+            transform: rotate(180deg);
+            animation: rotate $duration both;
         }
     }
 }

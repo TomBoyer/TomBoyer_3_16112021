@@ -16,12 +16,52 @@ li {
   list-style: none;
 }
 
+.page__wrapper {
+  max-width: 1440px;
+  margin: auto;
+}
+
 body {
   font-family: "Roboto", sans-serif;
 }
 
 h1 {
   font-family: Shrikhand, sans-serif;
+}
+h1::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 0%;
+  background: transparent;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  transform-origin: right;
+}
+h1:hover:after {
+  width: 100%;
+  background: black;
+}
+
+h5 {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 300;
+  color: #353535;
+  margin-bottom: 15px;
+}
+h5::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  margin-top: 5px;
+  background: #99E2D0;
+}
+
+h6 {
+  font-size: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @keyframes grow {
@@ -46,6 +86,30 @@ h1 {
   100% {
     opacity: 1;
     transform: translateY(0px);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes slide {
+  0% {
+    transform: scaleX(0em);
+  }
+  100% {
+    transform: scaleX(-70px);
+  }
+}
+@keyframes slide-2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-3em);
   }
 }
 /* .btn{
@@ -113,7 +177,7 @@ h1 {
 }
 .btn-2:hover {
   transform: scale(1.1);
-  opacity: 0.9;
+  opacity: 0.8;
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-out;
   /* transform: scale(1.1);
@@ -169,6 +233,26 @@ h1 {
   padding: 1em 0 0.5em 0;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
   position: relative;
+}
+.header__backbtn {
+  position: absolute;
+  left: 20px;
+  top: 25px;
+  font-size: 25px;
+}
+.header__backbtn:hover {
+  border: 1px black solid;
+  border-radius: 50%;
+  padding: 0.2em 0.4em;
+  transform: scale(1.1);
+  opacity: 0.8;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-out;
+}
+.header__backbtn:active {
+  transform: translate(0.2em, 0.2em);
+  box-shadow: 0px 5px 2px 0px rgba(0, 0, 0, 0.15);
+  transition: transform ease-out;
 }
 
 .location {
@@ -300,6 +384,112 @@ h1 {
   right: 10px;
   top: 20px;
   font-size: 25px;
+}
+
+.dish {
+  /* position: absolute; */
+  border-radius: 20px 20px 0 0;
+  margin-top: -10px;
+  padding: 2em 1em;
+  background: #f6f6f6;
+}
+.dish__img {
+  /* position: relative; */
+}
+.dish__img img {
+  object-fit: cover;
+  width: 100%;
+  height: 230px;
+}
+.dish__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 1.5em;
+}
+.dish__order {
+  /* display: grid;
+  grid-gap: 40px; */
+}
+.dish__order__box {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.dish__button {
+  display: flex;
+  justify-content: center;
+  margin: 3em 0 1em 0;
+}
+.dish__button .btn {
+  padding: 1em 3.5em;
+}
+
+.items {
+  background: white;
+  padding: 1.1em 1em;
+  border-radius: 1em;
+  height: 80px;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.items:hover .items__check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: right;
+  animation: slide 0.3s ease;
+}
+.items:hover .price {
+  padding-right: 70px;
+  transition: 0.3s ease;
+}
+.items:active {
+  transform: translate(0.2em, 0.2em);
+  box-shadow: 0px 5px 2px 0px rgba(0, 0, 0, 0.15);
+  transition: transform ease-out;
+}
+.items__food-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+.items__food-price .food {
+  white-space: nowrap;
+  overflow: hidden;
+}
+.items__food-price .food p {
+  margin-top: 5px;
+  font-size: 15px;
+  font-weight: 300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.items__food-price .price {
+  font-weight: bold;
+  padding: 0 0.8em;
+}
+.items__check {
+  position: absolute;
+  right: 0;
+  /* display: flex;
+  align-items: center; */
+  display: none;
+  height: 100%;
+  padding: 0 1em;
+  background: #99E2D0;
+}
+.items__check i {
+  color: white;
+  font-size: 30px;
+  transform: rotate(180deg);
+  animation: rotate 0.3s both;
 }
 
 .footer {

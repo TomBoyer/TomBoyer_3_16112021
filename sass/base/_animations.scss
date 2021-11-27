@@ -28,3 +28,32 @@
         transform: translateY(0px);
     }
 }
+
+//anim dish check
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes slide {
+    0%{
+        transform: scaleX(0em);
+    }
+    100%{
+        transform: scaleX(-70px);
+    }
+}
+
+@keyframes slide-2 {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-3em);
+    }
+}
