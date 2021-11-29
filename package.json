@@ -1,16 +1,17 @@
 {
   "name": "p3_boyer_tom",
   "version": "1.0.0",
-  "description": "",
+  "description": "P3 OC Ohmyfood : dynamiser une page web avec htme et css. utilisation de sass",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./main.scss:./css/style.css"
+    "sass": "sass --watch ./main.scss:./css/style.css",
+    "prod": "sass --watch ./main.scss:./css/style.css --style compressed postcss ./public/css/style.css"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TomBoyer/TomBoyer_3_16112021.git"
   },
-  "author": "",
+  "author": "Tom Boyer",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/TomBoyer/TomBoyer_3_16112021/issues"

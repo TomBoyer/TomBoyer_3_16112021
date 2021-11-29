@@ -23,6 +23,9 @@
             padding: 0.2em 0.4em;
 
             @include btn-hover;
+
+            left: 10px;
+            top: 15px;
         }
         &:active{
             @include btn-active;

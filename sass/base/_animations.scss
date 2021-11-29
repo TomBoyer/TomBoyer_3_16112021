@@ -57,3 +57,23 @@
         transform: translateX(-3em);
     }
 }
+
+//heart
+@keyframes fade {
+    0%{
+        fill: transparent;
+    }
+    100%{
+        fill: url("grad1");
+    }
+}
+@keyframes stroke {
+    0%{
+        stroke-dashoffset: 100%; /* pointillets */
+            stroke-dasharray: 100%; /* ecart entre pointillets */
+    }
+    100%{
+        stroke-dasharray: 0%;
+        stroke-dashoffset: 0%;
+    }
+}

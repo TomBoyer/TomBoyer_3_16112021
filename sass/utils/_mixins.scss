@@ -44,3 +44,7 @@
 @mixin padding {
     padding: 2em 1em;
 }
+@mixin gradient {
+    background: rgb(147,86,220);
+    background: linear-gradient(190deg, rgba(147,86,220,1) 38%, rgba(255,121,218,1) 75%, rgba(255,121,218,1) 100%);
+}
