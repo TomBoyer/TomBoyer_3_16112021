@@ -263,9 +263,9 @@ h6 {
 .restaurants__card__description svg:hover {
   fill: url(#grad1);
   transform: scale(1.2);
-  stroke: none;
-  transition: all 0.3s ease;
-  animation: stroke 2s ease;
+  stroke: url(#grad1);
+  transition: all 0.8s ease;
+  animation: stroke 0.3s ease;
 }
 
 /* loader barres */
@@ -417,15 +417,40 @@ h6 {
 .restaurants {
   background: #f6f6f6;
   padding: 2em 1.2em;
+  position: relative;
 }
 .restaurants__title {
   margin-bottom: 1em;
+}
+.restaurants__new {
+  z-index: 100;
+  position: absolute;
+  top: 100px;
+  right: 40px;
+  padding: 0.5em 0.6em;
+  background-color: #99E2D0;
+  color: #139273;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.restaurants__new:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-out;
+}
+.restaurants__new:active {
+  transform: translate(0.2em, 0.2em);
+  box-shadow: 0px 5px 2px 0px rgba(0, 0, 0, 0.15);
+  transition: transform ease-out;
 }
 .restaurants__card {
   margin-bottom: 1.5em;
   border-radius: 20px;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
   position: relative;
+  cursor: pointer;
 }
 .restaurants__card:hover {
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.4);
@@ -448,7 +473,7 @@ h6 {
   top: 20px;
   right: 17px;
   padding: 0.5em 0.6em;
-  background-color: #99e2d0;
+  background-color: #99E2D0;
   color: #139273;
   font-weight: bold;
   border-radius: 3px;

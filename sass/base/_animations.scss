@@ -70,7 +70,7 @@
 @keyframes stroke {
     0%{
         stroke-dashoffset: 100%; /* pointillets */
-            stroke-dasharray: 100%; /* ecart entre pointillets */
+        stroke-dasharray: 100%; /* ecart entre pointillets */
     }
     100%{
         stroke-dasharray: 0%;

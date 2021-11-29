@@ -131,9 +131,9 @@
             &:hover{
                 fill: url(#grad1);
                 transform: scale(1.2);
-                stroke: none;
-                transition: all $duration ease;
-                animation: stroke 2s ease;
+                stroke: url(#grad1);
+                transition: all .8s ease;
+                animation: stroke $duration ease;
             }
         }
     }
