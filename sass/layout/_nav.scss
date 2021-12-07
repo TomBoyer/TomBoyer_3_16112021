@@ -45,7 +45,7 @@
 
         position: absolute;
         left: -10px;
-        top: 11px;
+        top: 13px;
 
         background: $color-1;
         border-radius: 50%;
@@ -53,6 +53,10 @@
 
         width: 1.5em;
         height: 1.5em;
+
+        @include tablette{
+            top: 35%;
+        }
     }
     &__icon{
         color: grey;

@@ -20,6 +20,13 @@
     
             width: 100%;
             height: 350px;
+
+            @include desktop{
+                height: 430px;
+            }
+            @include tablette{
+                height: 400px;
+            }
         }
     }
 
@@ -31,11 +38,27 @@
 
         margin-bottom: 1.5em;
 
+        @include desktop{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @include tablette{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .heart{
             width: 40px;
             fill: black;
 
             cursor: pointer;
+
+            @include desktop{
+                margin-top: 15px;
+            }
 
             path{
                 fill: transparent;
@@ -45,8 +68,8 @@
                 stroke-dasharray: 1540;
                 stroke-dashoffset: 0;
 
-/*                 background: linear-gradient(190deg, rgba(147,86,220,1) 38%, rgba(255,121,218,1) 75%, rgba(255,121,218,1) 100%);
- */
+                /* background: linear-gradient(190deg, rgba(147,86,220,1) 38%, rgba(255,121,218,1) 75%, rgba(255,121,218,1) 100%); */
+
 
                 &:hover{
                     animation: anim-heart $duration2 ease-in-out;
@@ -60,8 +83,6 @@
     }
 
     &__order{
-        /* display: grid;
-        grid-gap: 40px; */
 
         &__box{
             display: grid;
@@ -69,6 +90,29 @@
             grid-template-rows: 1fr 1fr 1fr;
 
             margin-bottom: 50px;
+        }
+
+        &__title{
+            @include desktop{
+                @include flex-center;
+            }
+            @include tablette{
+                @include flex-center;
+            }
+        }
+
+        @include desktop{
+        display: grid;
+        grid-template-columns: 2fr 4fr;
+        grid-gap: 50px;
+
+        padding: 0 5rem;
+    }
+
+        @include tablette{
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            grid-gap: 30px;
         }
     }
  
@@ -81,6 +125,11 @@
         .btn{
             padding: 1em 3.5em;
         }
+    }
+
+    @include desktop{
+        max-width: 90%;
+        margin: auto;
     }
 }
 
@@ -102,6 +151,8 @@
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
+
+    animation: ghost $duration2 backwards;
 
     &:hover &__check{
         @include flex-center;
@@ -164,6 +215,12 @@
 
             transform: rotate(180deg);
             animation: rotate $duration both;
+        }
+    }
+
+    @for $n from 1 through 4 {
+        &--#{$n} {
+            animation-delay: $duration * $n;
         }
     }
 }

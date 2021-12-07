@@ -10,6 +10,10 @@
         h1{
             color: white;
             font-size: 22px;
+
+            &::after{
+                background: white;
+            }
         }
     }
     &__list{
@@ -30,8 +34,27 @@
                     }
                 }
 
-                &:hover{
+                /* &:hover{
                     @include btn-hover;
+                } */
+                &::after{
+                    content: '';
+            
+                    display: block;
+
+                    margin-top: 5px;
+            
+                    height: 4px;
+                    width: 0%;
+            
+                    /* background: inherit; */
+            
+                    transition: width $duration ease, background-color $duration ease;
+                    transform-origin: right;
+                }
+                &:hover:after{
+                    width: 100%;
+                    background: white;
                 }
             }
 
