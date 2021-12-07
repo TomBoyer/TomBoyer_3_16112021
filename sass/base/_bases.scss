@@ -15,7 +15,10 @@ a{
 li{
     list-style: none;
 }
-.page__wrapper{
+.page_wrapper{
+
     max-width: 1440px;
     margin: auto;
+
+    background: $color-4;
 }

@@ -16,9 +16,10 @@ li {
   list-style: none;
 }
 
-.page__wrapper {
+.page_wrapper {
   max-width: 1440px;
   margin: auto;
+  background: #f6f6f6;
 }
 
 body {
@@ -27,6 +28,7 @@ body {
 
 h1 {
   font-family: Shrikhand, sans-serif;
+  font-size: 27px;
 }
 h1::after {
   content: "";
@@ -64,6 +66,20 @@ h6 {
   text-overflow: ellipsis;
 }
 
+@keyframes opaci {
+  0% {
+    opacity: 1;
+    z-index: 10;
+  }
+  99% {
+    opacity: 0;
+    z-index: 10;
+  }
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+}
 @keyframes grow {
   0% {
     transform: scaleY(0);
@@ -98,7 +114,7 @@ h6 {
 }
 @keyframes slide {
   0% {
-    transform: scaleX(0em);
+    transform: scaleX(0);
   }
   100% {
     transform: scaleX(-70px);
@@ -130,6 +146,31 @@ h6 {
   100% {
     stroke-dasharray: 0%;
     stroke-dashoffset: 0%;
+  }
+}
+@keyframes anim-heart {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 1540;
+  }
+  60% {
+    stroke-dashoffset: 3080;
+    fill: transparent;
+    transform: scale(1);
+  }
+  80% {
+    fill: url(#grad1);
+    transform: scale(1.1);
+  }
+  90% {
+    transform: scale(1);
+  }
+  100% {
+    stroke-dashoffset: 3080;
+    fill: url(#grad1);
+    stroke: url(#grad1);
   }
 }
 /* .btn{
@@ -266,13 +307,62 @@ h6 {
   stroke: url(#grad1);
   transition: all 0.8s ease;
   animation: stroke 0.3s ease;
+  /* background: url(#grad1); */
+  transform-origin: bottom;
+}
+.restaurants__card__description__like {
+  position: relative;
+  right: 10px;
+  font-size: 30px;
+}
+.restaurants__card__description__like .heart {
+  position: absolute;
+  right: 10px;
+  font-size: 30px;
+}
+.restaurants__card__description__like .heart--grad {
+  transform: scale(0.1);
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform-origin: 50% 65%;
+  opacity: 0;
+}
+.restaurants__card__description__like:hover .heart--grad {
+  transform: scale(1.2);
+  transition: all 0.3s ease-in;
+  opacity: 1;
+}
+
+.loader {
+  /* 
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear; */
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Shrikhand, sans-serif;
+  font-size: 3rem;
+  background-color: #f5edff;
+  opacity: 0.8;
+  z-index: 1000;
+  animation: opaci 2s ease-in forwards;
+}
+.loader__border {
+  position: relative;
+  width: 500px;
+  height: 500px;
 }
 
 /* loader barres */
-.loader-bars:before,
-.loader-bars:after,
-.loader-bars span:before,
-.loader-bars span:after {
+.loader--bars:before,
+.loader--bars:after,
+.loader--bars span:before,
+.loader--bars span:after {
   content: "";
   display: block;
   position: absolute;
@@ -284,12 +374,12 @@ h6 {
   animation: grow 1.2s linear infinite;
 }
 
-.loader-bars:after {
+.loader--bars:after {
   left: 15px;
   animation-delay: -0.25s;
 }
 
-.loader-bars span:before {
+.loader--bars span:before {
   left: 30px;
   animation-delay: -0.5s;
 }
@@ -374,6 +464,9 @@ h6 {
   /* box-shadow: 0px 2px 5px 0px rgba(0 0 0 / 15%); */
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
   cursor: pointer;
+  /* &:visited{
+      background: $color-1-clr;
+  } */
 }
 .nav li:hover {
   background: #f9f9f9;
@@ -388,9 +481,6 @@ h6 {
 }
 .nav li:active .nav__icon {
   color: #9356DC;
-}
-.nav li:visited {
-  background: #f5edff;
 }
 .nav__number {
   display: flex;
@@ -491,26 +581,47 @@ h6 {
 }
 
 .dish {
-  /* position: absolute; */
-  border-radius: 20px 20px 0 0;
+  border-radius: 40px 40px 0 0;
   margin-top: -10px;
-  padding: 2em 1em;
+  padding: 2em 1em 0 1em;
   background: #f6f6f6;
+  transform: translateY(-90px);
 }
 .dish__img {
-  /* position: relative; */
+  object-fit: cover;
 }
 .dish__img img {
   object-fit: cover;
   width: 100%;
-  height: 230px;
+  height: 350px;
 }
 .dish__title {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
   position: relative;
   margin-bottom: 1.5em;
+}
+.dish__title .heart {
+  width: 40px;
+  fill: black;
+  cursor: pointer;
+}
+.dish__title .heart path {
+  fill: transparent;
+  stroke-width: 25;
+  stroke: black;
+  stroke-dasharray: 1540;
+  stroke-dashoffset: 0;
+  /*                 background: linear-gradient(190deg, rgba(147,86,220,1) 38%, rgba(255,121,218,1) 75%, rgba(255,121,218,1) 100%);
+   */
+}
+.dish__title .heart path:hover {
+  animation: anim-heart 0.8s ease-in-out;
+  animation-fill-mode: forwards;
+  /* transform: scaleX(1.1); */
+  transform: scale(1.1);
+  /* proposition de scaling en X plus sympa au visuel */
+  transition: all 0.3s ease;
 }
 .dish__order {
   /* display: grid;
@@ -520,11 +631,12 @@ h6 {
   display: grid;
   grid-gap: 15px;
   grid-template-rows: 1fr 1fr 1fr;
+  margin-bottom: 50px;
 }
 .dish__button {
   display: flex;
   justify-content: center;
-  margin: 3em 0 1em 0;
+  margin: 3em 0 0em 0;
 }
 .dish__button .btn {
   padding: 1em 3.5em;
@@ -547,7 +659,7 @@ h6 {
   justify-content: center;
   align-items: center;
   transform-origin: right;
-  animation: slide 3s ease;
+  animation: slide 0.3s ease;
 }
 .items:hover .price {
   padding-right: 70px;

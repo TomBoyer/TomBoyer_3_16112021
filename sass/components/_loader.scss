@@ -1,11 +1,41 @@
 //loader
 
+.loader{
+    /* 
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear; */
+
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+
+    @include flex-center;
+
+    @include typo1;
+    font-size: 3rem;
+
+    background-color: $color-1-clr;
+    opacity: 0.8;
+
+    z-index: 1000;
+
+    animation: opaci 2s ease-in forwards;
+
+    &__border{
+        position: relative;
+        width: 500px;
+        height: 500px;
+    }
+}
+
 /* loader barres */
 
-.loader-bars:before,
-.loader-bars:after,
-.loader-bars span:before,
-.loader-bars span:after
+.loader--bars:before,
+.loader--bars:after,
+.loader--bars span:before,
+.loader--bars span:after
 {
     content: '';
     display: block;
@@ -17,12 +47,13 @@
     height: 30px;
     background: linear-gradient($color-1 0%, $color-2 50%, $color-3 100%);
     animation: grow 1.2s linear infinite;
+
 }
-.loader-bars:after{
+.loader--bars:after{
     left: 15px;
     animation-delay: -.25s;
 }
-.loader-bars span:before{
+.loader--bars span:before{
     left: 30px;
     animation-delay: -.5s;
 }

@@ -1,5 +1,21 @@
 //all @keyframes
 
+//page wrapper 
+@keyframes opaci {
+    0% {
+		opacity: 1;
+		z-index: 10;
+	}
+	99% {
+		opacity: 0;
+		z-index: 10;
+	}
+	100% {
+		opacity: 0;
+		z-index: -10;
+	}
+}
+
 //anim loader
 @keyframes grow {
     0%{
@@ -15,7 +31,6 @@
         opacity: 0;
     }
 }
-
 
 //anim btn
 @keyframes pulse {
@@ -42,7 +57,7 @@
 
 @keyframes slide {
     0%{
-        transform: scaleX(0em);
+        transform: scaleX(0);
     }
     100%{
         transform: scaleX(-70px);
@@ -75,5 +90,32 @@
     100%{
         stroke-dasharray: 0%;
         stroke-dashoffset: 0%;
+    }
+}
+
+@keyframes anim-heart {
+    0%{
+       stroke-dashoffset: 0;
+    }
+    40%{
+       stroke-dashoffset: 1540;
+       
+    }
+    60%{
+       stroke-dashoffset: 3080;
+       fill: transparent;
+       transform: scale(1);
+    }
+    80%{
+        fill: url(#grad1);
+        transform: scale(1.1);
+     }
+     90%{
+         transform: scale(1);
+     }
+    100%{
+       stroke-dashoffset: 3080;
+       fill: url(#grad1);
+       stroke: url(#grad1);
     }
 }
