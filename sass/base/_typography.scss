@@ -25,7 +25,26 @@ h1{
         width: 100%;
         background: black;
     }
+
+    @include desktop{
+        font-size: 50px;
+    }
+    @include tablette{
+        font-size: 40px;
+    }
 }
+
+h3{
+    @include desktop{
+        text-align: center;
+        font-size: 25px;
+    }
+    @include tablette{
+        text-align: center;
+        font-size: 20px;
+    }
+}
+
 h5{
     text-transform: uppercase;
     font-size: 20px;

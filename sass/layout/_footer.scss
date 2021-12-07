@@ -14,18 +14,45 @@
     }
     &__list{
         margin: 1.2em 0;
+        width: 100%;
 
-        li{
-            margin-bottom: 0.5em;
-            a{
-                color: white;
+        ul{
 
-                display: flex;
+            li{
+                margin-bottom: 0.5em;
+                a{
+                    color: white;
 
-                span{
-                    margin-right: 10px;
+                    display: flex;
+
+                    span{
+                        margin-right: 10px;
+                    }
+                }
+
+                &:hover{
+                    @include btn-hover;
                 }
             }
+
+            @include desktop{
+                display: flex;
+                justify-content: space-around;
+            }
+            @include tablette{
+                display: flex;
+                justify-content: space-around;
+            }
         }
+    }
+    @include desktop{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    @include tablette{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }

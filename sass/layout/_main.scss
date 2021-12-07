@@ -10,8 +10,15 @@
 
     background: #eaeaea;
 
-    /* background: rgba(187,184,184,0.59);
-    background: linear-gradient(180deg,rgba(187,184,184,0.59) 0%, transparent 100%); */
+    &__icon{
+        transform: translateX(-20px);
+    }
+
+    p{
+        @include desktop{
+            font-size: 20px;
+        }
+    }
 }
 
 //restaurants
@@ -106,5 +113,23 @@
                 font-size: 25px;
             }
         }
+    }
+}
+
+.restaurants__list{
+    @include desktop{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 40px;
+
+        padding: 0 10rem;
+    }
+
+    @include tablette{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 20px;
     }
 }
