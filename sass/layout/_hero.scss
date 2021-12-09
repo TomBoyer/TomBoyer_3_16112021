@@ -5,7 +5,7 @@
 .hero{
     background: $color-4;
 
-    padding: 2em 3em;
+    padding: 2em 3em 3.5em 3em;
 
     display: flex;
     flex-direction: column;
@@ -19,7 +19,7 @@
     &__subtitle{
         font-weight: 200;
 
-        margin: 1em 0 1em 0;
+        margin: 1em 0 2em 0;
     }
 
     &__button{

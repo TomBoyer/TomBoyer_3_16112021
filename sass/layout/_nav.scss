@@ -3,7 +3,7 @@
 //nav
 
 .nav{
-    @include padding;
+    padding: 2em 2em;
 
     &__title{
         margin-bottom: 1em;
