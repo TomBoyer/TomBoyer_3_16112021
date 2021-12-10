@@ -1,8 +1,5 @@
 @import "./sass/utils/variables";
-@import "./sass/utils/functions";
 @import "./sass/utils/mixins";
-@import "./sass/utils/placeholders";
-@import "./sass/utils/extensions";
 
 @import "./sass/base/bases";
 @import "./sass/base/typography";
@@ -18,6 +15,4 @@
 @import "./sass/layout/dish";
 @import "./sass/layout/footer";
 
-@import "./sass/pages/work";
 @import "./sass/pages/about";
-@import "./sass/pages/project";
