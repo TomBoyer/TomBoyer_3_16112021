@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/TomBoyer/TomBoyer_3_16112021/issues"
   },
-  "homepage": "https://github.com/TomBoyer/TomBoyer_3_16112021#readme"
+  "homepage": "https://github.com/TomBoyer/TomBoyer_3_16112021#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.0"
+  }
 }

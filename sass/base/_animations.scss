@@ -1,6 +1,24 @@
 //all @keyframes
 
 //page wrapper 
+@-webkit-keyframes opaci {
+    0% {
+		opacity: 1;
+		z-index: 10;
+	}
+	90% {
+		opacity: .3;
+		z-index: 10;
+	}
+    99% {
+		opacity: 0;
+		z-index: 10;
+	}
+	100% {
+		opacity: 0;
+		z-index: -10;
+	}
+}
 @keyframes opaci {
     0% {
 		opacity: 1;
@@ -21,6 +39,20 @@
 }
 
 //anim loader
+@-webkit-keyframes grow {
+    0%{
+        transform: scaleY(0);
+        opacity: 0;
+    }
+    50%{
+        transform: scaleY(1);
+        opacity: 1
+    }
+    100%{
+        transform: scaleY(0);
+        opacity: 0;
+    }
+}
 @keyframes grow {
     0%{
         transform: scaleY(0);
@@ -37,6 +69,16 @@
 }
 
 //anim btn
+@-webkit-keyframes pulse {
+    0%{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
 @keyframes pulse {
     0%{
         opacity: 0;
@@ -50,6 +92,15 @@
 
 //anim dish check
 
+@-webkit-keyframes rotate {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
 @keyframes rotate {
     0%{
         transform: rotate(0);
@@ -59,12 +110,30 @@
     }
 }
 
+@-webkit-keyframes slide {
+    0%{
+        transform: scaleX(0);
+    }
+    100%{
+        transform: scaleX(-70px);
+    }
+}
+
 @keyframes slide {
     0%{
         transform: scaleX(0);
     }
     100%{
         transform: scaleX(-70px);
+    }
+}
+
+@-webkit-keyframes slide-2 {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-3em);
     }
 }
 
@@ -78,12 +147,30 @@
 }
 
 //heart
+@-webkit-keyframes fade {
+    0%{
+        fill: transparent;
+    }
+    100%{
+        fill: url("grad1");
+    }
+}
 @keyframes fade {
     0%{
         fill: transparent;
     }
     100%{
         fill: url("grad1");
+    }
+}
+@-webkit-keyframes stroke {
+    0%{
+        stroke-dashoffset: 100%; /* pointillets */
+        stroke-dasharray: 100%; /* ecart entre pointillets */
+    }
+    100%{
+        stroke-dasharray: 0%;
+        stroke-dashoffset: 0%;
     }
 }
 @keyframes stroke {
@@ -94,6 +181,33 @@
     100%{
         stroke-dasharray: 0%;
         stroke-dashoffset: 0%;
+    }
+}
+
+@-webkit-keyframes anim-heart {
+    0%{
+       stroke-dashoffset: 0;
+    }
+    40%{
+       stroke-dashoffset: 1540;
+       
+    }
+    60%{
+       stroke-dashoffset: 3080;
+       fill: transparent;
+       transform: scale(1);
+    }
+    80%{
+        fill: url(#grad1);
+        transform: scale(1.1);
+     }
+     90%{
+         transform: scale(1);
+     }
+    100%{
+       stroke-dashoffset: 3080;
+       fill: url(#grad1);
+       stroke: url(#grad1);
     }
 }
 
@@ -125,6 +239,17 @@
 }
 
 //anim-grid dish
+
+@-webkit-keyframes ghost {
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 @keyframes ghost {
     0%{

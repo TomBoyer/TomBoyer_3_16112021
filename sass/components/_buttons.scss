@@ -135,7 +135,8 @@
                 transform: scale(1.2);
                 stroke: url(#grad1);
                 transition: all .8s ease;
-                animation: stroke $duration ease;
+                -webkit-animation: stroke $duration ease;
+                        animation: stroke $duration ease;
 
                 /* background: url(#grad1); */
                 transform-origin: bottom;

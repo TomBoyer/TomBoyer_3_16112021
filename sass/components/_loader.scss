@@ -21,7 +21,9 @@ body{
 
     z-index: 1000;
 
-    animation: opaci 3s ease-in forwards;
+    -webkit-animation: opaci 3s ease-in forwards;
+
+            animation: opaci 3s ease-in forwards;
 
     &__txt{
         text-align: center;
@@ -52,18 +54,22 @@ body{
     width: 10px;
     height: 30px;
     background: linear-gradient($color-1 0%, $color-2 50%, $color-3 100%);
-    animation: grow 1.2s linear infinite;
+    -webkit-animation: grow 1.2s linear infinite;
+            animation: grow 1.2s linear infinite;
 
 }
 .loader--bars:after{
     left: 15px;
-    animation-delay: -.25s;
+    -webkit-animation-delay: -.25s;
+            animation-delay: -.25s;
 }
 .loader--bars span:before{
     left: 30px;
-    animation-delay: -.5s;
+    -webkit-animation-delay: -.5s;
+            animation-delay: -.5s;
 }
 .loader-bars span:after{
     left: 45px;
-    animation-delay: -.75s;
+    -webkit-animation-delay: -.75s;
+            animation-delay: -.75s;
 }
