@@ -486,6 +486,7 @@ h6 {
   /* background: -webkit-gradient(linear, left top, left bottom, from($color-1), to($color-2)); */
   background: linear-gradient(190deg, #9356dc 38%, #ff79da 75%, #ff79da 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   transform-origin: 50% 65%;
   opacity: 0;
